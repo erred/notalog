@@ -1,0 +1,14 @@
+steps:
+  # name: gcr.io/$PROJECT_ID/protoc:latest
+  # args:
+  #   - -I:notalog
+  #   - notalog/notalog.proto
+  #   - --js_out=import_style=commonjs:notalog
+  #   - --grpc-web_out=import_style=commonjs,mode=grpcwebtext:notalog
+  #   - --go_out=plugins=grpc:notalog
+  - name: "gcr.io/kaniko-project/executor:latest"
+    args:
+      - "--cache"
+      - "--destination=gcr.io/$PROJECT_ID/$_IMG:latest"
+substitutions:
+  _IMG: "notalog-server"

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package notalog;
+
+service Streamer {
+  rpc Stream(Request) returns (stream Event);
+}
+
+message Request {
+  bool tail = 1;
+  int32 old = 2;
+}
+
+message Event {
+  string time   = 1;
+  string source = 2;
+  string title  = 3;
+  string detail = 4;
+}

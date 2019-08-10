@@ -9,7 +9,7 @@ import (
 	"github.com/improbable-eng/grpc-web/go/grpcweb"
 	"google.golang.org/grpc"
 
-	pb "github.com/seankhliao/notalog/notalog"
+	pb "seankhliao.com/notalog/notalog"
 )
 
 var (
